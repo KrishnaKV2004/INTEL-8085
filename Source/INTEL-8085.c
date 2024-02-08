@@ -10,14 +10,15 @@
 
 //  Local Headers ---->
 
-#include "../Headers/INS_SET.h"
 #include "../Functions/Func.h"
+#include "../Headers/INS_SET.h"
+#include "../Headers/INS_FUN.h"
 
 //  Main Function ---->
 
 int main()
 {
-
+    mainMenu();
 
     return 0;
 }
