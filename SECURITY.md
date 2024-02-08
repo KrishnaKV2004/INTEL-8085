@@ -11,6 +11,6 @@
 
 ## Reporting a Vulnerability
 
-#Mail
+# Mail
 
 krishnaverma2004mac@gmail.com
