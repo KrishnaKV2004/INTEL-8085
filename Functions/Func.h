@@ -11,6 +11,8 @@ void subMenu();
 
 //  Function Definition ---->
 
+//  Dashes -->
+
 void dash(int dashes)
 {
     int iteration;
@@ -20,6 +22,8 @@ void dash(int dashes)
         printf("-");
     }
 }
+
+//  New Lines -->
 
 void newLine(int lines)
 {
@@ -31,6 +35,8 @@ void newLine(int lines)
     }
 }
 
+//  Main Menu -->
+
 void mainMenu()
 {
     system("cls");
@@ -40,13 +46,15 @@ void mainMenu()
     printf("\n KEY         OPERATION       \n");
     dash(DASH);
     printf("\n  A  |     Assembly Mode       ");
-    printf("\n  R  |      Memory Mode        ");
+    printf("\n  M  |      Memory Mode        ");
     newLine(1);
     dash(DASH);
     newLine(1);
 }
 
-void subMenu()
+//  Address Menu -->
+
+void addressMenu()
 {
     
 }

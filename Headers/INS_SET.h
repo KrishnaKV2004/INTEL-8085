@@ -1,7 +1,7 @@
 #ifndef INS_SET_H
 #define INS_SET_H
 
-//  INSTRUCION SET DEFINITION ---->
+//  INSTRUCION SET MACROS ---->
 
 #define INS_1 "ACI DATA"
 #define INS_2 "ADC A"
