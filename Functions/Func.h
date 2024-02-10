@@ -5,12 +5,14 @@
 //  Function Declaration ---->
 
 void dash(int);
-char GetChoice();
 void newLine(int);
+
+char getChoice();
 void mainMenu();
 void resetMenu();
 void memoryMenu();
 void addressMenu();
+void instructionMenu();
 
 //  Function Definition ---->
 
@@ -40,7 +42,7 @@ void newLine(int lines)
 
 //  Main Menu -->
 
-char GetChoice()
+char getChoice()
 {
     char Choice;
     Choice = getch();
