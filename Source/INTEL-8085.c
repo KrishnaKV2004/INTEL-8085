@@ -14,13 +14,21 @@
 #include "../Functions/Func.h"
 #include "../Headers/INS_SET.h"
 #include "../Headers/INS_FUN.h"
+#include "../Components/Memory.h"
 #include "../Components/Architecture.h"
 
 //  Main Function ---->
 
 int main()
 {
+    while(1)
+    {
+        
+    }
     mainMenu();
+
+    printf("\n-->\t");
+
 
     return 0;
 }
