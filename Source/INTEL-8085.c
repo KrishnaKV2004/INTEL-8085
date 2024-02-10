@@ -12,8 +12,9 @@
 //  Local Headers ---->
 
 #include "../Functions/Func.h"
-#include "../Headers/INS_SET.h"
-#include "../Headers/INS_FUN.h"
+#include "../Library/OPCODE.h"
+#include "../Library/INS_SET.h"
+#include "../Library/INS_FUN.h"
 #include "../Components/Memory.h"
 #include "../Components/Architecture.h"
 
