@@ -2,6 +2,8 @@
 Name: BUG
 About: Create a report to help us improve
 Title: 'BUG REPORT'
+Lables: ''
+Assignees: ''
 
 ---
 
