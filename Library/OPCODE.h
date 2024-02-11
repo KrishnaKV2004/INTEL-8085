@@ -13,7 +13,7 @@ typedef struct OPCODE
 
 OPCODE Opcode[NUM_INSRUCTIONS];
 
-//  Mapping ---->
+//  Mapping Instructions ---->
 
 //  00 --> 0F
 
