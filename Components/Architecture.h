@@ -1,15 +1,26 @@
-//  Macros -->
-
-#define REG_SIZE 8
-#define SREG_SIZE 16
-
 //  Accumulator ---->
 
-int Accumulator[REG_SIZE] = {0};
+uint8_t Accumulator;
 
 //  Flag Register ---->
 
-int Flag[REG_SIZE] = {0};
+typedef struct FLAG
+{
+    bool Sign;
+    bool Zero;
+    bool AuxCarry;
+    bool Parity;
+    bool Carry;
+} FLAG;
+
+void init_FLAG()
+{
+    FLAG.Sign = false;
+    FLAG.Zero = false;
+    FLAG.AuxCarry = false;
+    FLAG.Parity = false;
+    FLAG.Carry = false;
+}
 
 //  General Purpose Registers ---->
 
