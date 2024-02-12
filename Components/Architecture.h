@@ -1,6 +1,9 @@
+#ifndef ARCHITECTURE_H
+#define ARCHITECTURE_H
+
 //  Accumulator ---->
 
-uint8_t Accumulator;
+extern uint8_t Accumulator;
 
 //  Flag Register ---->
 
@@ -13,29 +16,33 @@ typedef struct FLAG
     bool Carry;
 } FLAG;
 
-void init_FLAG()
+extern FLAG Flag;      //  Global Variable
+
+void init_Flag(FLAG * Flag)
 {
-    FLAG.Sign = false;
-    FLAG.Zero = false;
-    FLAG.AuxCarry = false;
-    FLAG.Parity = false;
-    FLAG.Carry = false;
+    Flag->Sign = false;
+    Flag->Zero = false;
+    Flag->AuxCarry = false;
+    Flag->Parity = false;
+    Flag->Carry = false;
 }
 
 //  General Purpose Registers ---->
 
-int B[REG_SIZE] = {0};
-int C[REG_SIZE] = {0};
-int D[REG_SIZE] = {0};
-int E[REG_SIZE] = {0};
-int H[REG_SIZE] = {0};
-int L[REG_SIZE] = {0};
+extern uint8_t REG_B;
+extern uint8_t REG_C;
+extern uint8_t REG_D;
+extern uint8_t REG_E;
+extern uint8_t REG_H;
+extern uint8_t REG_L;
 
 //  Special Purpose Registers ---->
 
-int StackPointer[SREG_SIZE] = {0};
-int ProgramCounter[SREG_SIZE] = {0};
+extern uint16_t StackPointer;
+extern uint16_t ProgramCounter;
 
 //  Instruction Decoder ---->
 
-int InstructionDecoder[REG_SIZE] = {0};
+extern uint8_t InstructionDecoder;
+
+#endif /* ARCHITECTURE_H */

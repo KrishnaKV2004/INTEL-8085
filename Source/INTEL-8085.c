@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdbool.h>
 
 //  Local Headers ---->
 
@@ -22,6 +23,38 @@
 
 int main()
 {
+    //  Initialize Opcode Mapping -->
+
+    init_Opcode();
+
+    //  Initialize Architecture -->
+
+    uint8_t Accumulator = 0;
+
+    FLAG Flag;
+
+    init_Flag(&Flag);
+
+    //  Initializing General Purpose Registers -->
+
+    uint8_t REG_B = 0;
+    uint8_t REG_C = 0;
+    uint8_t REG_D = 0;
+    uint8_t REG_E = 0;
+    uint8_t REG_H = 0;
+    uint8_t REG_L = 0;
+
+    //  Initializing Special Purpose Registers -->
+
+    uint16_t StackPointer = 0;
+    uint16_t ProgramCounter = 0;
+
+    //  Initializing Instruction Decoder -->
+
+    uint8_t InstructionDecoder = 0;
+
+    //  Main Menu -->
+    
     mainMenu();
 
     printf("\n-->\t");
