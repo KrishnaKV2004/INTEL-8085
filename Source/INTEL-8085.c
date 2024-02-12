@@ -55,9 +55,12 @@ int main()
 
     //  Main Menu -->
     
-    mainMenu();
+    Main_Menu:
 
-    printf("\n-->\t");
+        mainMenu();
+    
+        printf("\n-->\t");
+        getChoice();
 
     return 0;
 }
