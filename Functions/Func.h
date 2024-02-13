@@ -2,6 +2,8 @@
 
 #define DASH 30
 
+uint16_t Memory_Data_Seek;
+
 //  Function Declaration ---->
 
 void dash(int);
@@ -13,6 +15,7 @@ void resetMenu();
 void memoryMenu();
 void addressMenu();
 void instructionMenu();
+void displayMemoryData(uint16_t);
 
 //  Function Definition ---->
 
@@ -51,6 +54,16 @@ char getChoice()
     {
         return 'A';
     }
+
+    if (Choice == 'M' || Choice == 'm')
+    {
+        return 'M';
+    }
+
+    if (Choice == 'E' || Choice == 'e')
+    {
+        return 'E';
+    }
 }
 
 void mainMenu()
@@ -72,7 +85,7 @@ void mainMenu()
 
 void addressMenu()
 {
-    int Ram_Address;
+    uint8_t Ram_Address;
 
     system("cls");
 
@@ -92,6 +105,27 @@ void resetMenu()
 }
 
 void memoryMenu()
+{
+    system("cls");
+
+    printf("\n          INTEL 8085          \n");
+    dash(DASH);
+    newLine(1);
+    printf("\n   MEMORY ADRESS --> ");
+    scanf("%x", &Memory_Data_Seek);
+    newLine(1);
+    dash(DASH);
+    
+    displayMemoryData(Memory_Data_Seek);
+}
+
+void displayMemoryData(uint16_t Memory_Data_Seek)
+{
+    printf("\n %02X", Memory[Memory_Data_Seek].Memory_Data);
+    getchar();
+}
+
+void instructionMenu()
 {
     
 }

@@ -1,25 +1,23 @@
-//  MACROS ---->
+//  Memory Mapping ---->
 
 #define MEM_SIZE 65536
 
-//  Memory 64 KB -->
+//  Memory Structure -->
 
-uint16_t CURR_ADDRESS;
-uint8_t Memory[MEM_SIZE];
-
-//  Memory Initialisation -->
-
-void init_Memory(uint8_t MEM_DATA)
+typedef struct MEMORY
 {
-    Memory[CURR_ADDRESS] = MEM_DATA;
-}
+    uint8_t Memory_Data;
+    uint16_t Memory_Address;
+} MEMORY;
 
-void printMemoryData(uint16_t CURR_ADDRESS)
+MEMORY Memory[MEM_SIZE];
+
+void init_Memory()
 {
-    
-}
+    //  Mapping Memory -->
 
-void printMemoryAddress(uint16_t CURR_ADDRESS)
-{
-
+    for (int iteration = 0x0000; iteration <= 0xFFFF; iteration++)
+    {
+        Memory[iteration] = (MEMORY){0x00, iteration};
+    }
 }

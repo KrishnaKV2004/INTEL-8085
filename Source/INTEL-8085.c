@@ -12,12 +12,12 @@
 
 //  Local Headers ---->
 
-#include "../Functions/Func.h"
+#include "../Components/Memory.h"
+#include "../Components/Architecture.h"
 #include "../Library/OPCODE.h"
 #include "../Library/INS_SET.h"
 #include "../Library/INS_FUN.h"
-#include "../Components/Memory.h"
-#include "../Components/Architecture.h"
+#include "../Functions/Func.h"
 
 //  Main Function ---->
 
@@ -26,6 +26,7 @@ int main()
     //  Initialize Opcode Mapping -->
 
     init_Opcode();
+    init_Memory();
 
     //  Initialize Architecture -->
 
@@ -60,7 +61,29 @@ int main()
         mainMenu();
     
         printf("\n-->\t");
-        getChoice();
+        
+        switch (getChoice())
+        {
+        case 'A':
+
+            addressMenu();
+            break;
+
+        case 'M':
+
+            memoryMenu();
+            break;
+
+        case 'E':
+
+            exit(0);
+        
+        default:
+            
+            printf("INVALID INPUT");
+            sleep(3);
+            goto Main_Menu;
+        }
 
     return 0;
 }
