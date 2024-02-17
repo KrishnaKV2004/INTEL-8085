@@ -76,11 +76,13 @@ int main()
 
         case 'E':
 
+            printf("\nEXITING 8085 --> ");
+            sleep(2);
             exit(0);
         
         default:
             
-            printf("INVALID INPUT");
+            printf("INVALID INPUT !");
             sleep(3);
             goto Main_Menu;
         }
