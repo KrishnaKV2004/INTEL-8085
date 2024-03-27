@@ -1,6 +1,6 @@
 //  INTEL-8085 ---->
 
-//  Header Fies ---->
+//  Header Files ---->
 
 #include <stdio.h>
 #include <conio.h>
@@ -17,6 +17,7 @@
 #include "../Library/OPCODE.h"
 #include "../Library/INS_SET.h"
 #include "../Library/INS_FUN.h"
+#include "../Functions/Assemble.h"
 #include "../Functions/Func.h"
 
 //  Main Function ---->
@@ -64,27 +65,31 @@ int main()
         
         switch (getChoice())
         {
-        case 'A':
+            case 'A':
 
-            addressMenu();
-            break;
+                addressMenu();
+                break;
 
-        case 'M':
+            case 'M':
 
-            memoryMenu();
-            break;
+                memoryMenu();
+                break;
 
-        case 'E':
+            case 'R':
 
-            printf("\nEXITING 8085 --> ");
-            sleep(2);
-            exit(0);
+                goto Main_Menu;
+
+            case 'X':
+
+                printf("\nEXITING 8085 --> ");
+                sleep(2);
+                exit(0);
         
-        default:
+            default:
             
-            printf("INVALID INPUT !");
-            sleep(3);
-            goto Main_Menu;
+                printf("INVALID INPUT !");
+                sleep(3);
+                goto Main_Menu;
         }
 
     return 0;

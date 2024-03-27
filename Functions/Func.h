@@ -4,6 +4,8 @@
 
 uint16_t Memory_Data_Seek;
 
+Assemble *Main_Address = NULL;
+
 //  Function Declaration ---->
 
 void dash(int);
@@ -60,9 +62,14 @@ char getChoice()
         return 'M';
     }
 
-    if (Choice == 'E' || Choice == 'e')
+    if (Choice == 'R' || Choice == 'r')
     {
-        return 'E';
+        return 'R';
+    }
+
+    if (Choice == 27)
+    {
+        return 'X';
     }
 }
 
@@ -85,7 +92,7 @@ void mainMenu()
 
 void addressMenu()
 {
-    uint8_t Ram_Address;
+    uint16_t Ram_Address;
 
     system("cls");
 
@@ -93,10 +100,22 @@ void addressMenu()
     dash(DASH);
     newLine(1);
     printf("\n     RAM ADRESS --> ");
-    scanf("%d", &Ram_Address);
+    scanf("%x", &Ram_Address);
     newLine(1);
     dash(DASH);
-    sleep(1);
+
+    if (Ram_Address<0x2000)
+    {
+        printf("\n\n      Address Reserved !\n\n");
+        dash(DASH);
+        sleep(2);
+        addressMenu();
+    }
+
+    else
+    {
+        Main_Address = AssemblyCode(Main_Address);
+    }
 }
 
 void resetMenu()
@@ -112,7 +131,7 @@ void memoryMenu()
     dash(DASH);
     newLine(1);
     printf("\n   MEMORY ADRESS --> ");
-    scanf("%x", &Memory_Data_Seek);
+    scanf("%X", &Memory_Data_Seek);
     newLine(1);
     dash(DASH);
     
@@ -121,8 +140,13 @@ void memoryMenu()
 
 void displayMemoryData(uint16_t Memory_Data_Seek)
 {
-    printf("\n %02X", Memory[Memory_Data_Seek].Memory_Data);
-    getchar();
+    printf("\n\n  ADDRESS %X --> %02X -> ", Memory_Data_Seek, Memory[Memory_Data_Seek].Memory_Data);
+    char enter_check = getch();
+
+    if (enter_check == '\n')
+    {
+        printf("\n\n  ADDRESS %X --> %02X -> ", (Memory_Data_Seek+0x0001), (Memory[Memory_Data_Seek+0x0001]).Memory_Data);
+    }
 }
 
 void instructionMenu()
